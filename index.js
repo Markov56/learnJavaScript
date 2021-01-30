@@ -90,13 +90,20 @@ if(+value > 100 || value === null) break;
 
 //
 let n = 10;
-nextIteration: for(let i = 2; i <=n; i++){
-    for(let j = 2; j < i; j++){ //вопрос: почему 2 проходит
-        if(i % j === 0) continue nextIteration;
-    }
+for (let i = 2; i <=n; i++){ 
+  if (!isPrime(i)) continue;
+    
     console.log(i)
 }
 
+function isPrime(n) {
+  for (let i = 2; i < n; i++) {
+    if (n % i == 0) return false;
+  }
+
+  return true;
+}
+/*
 
 //2.14
 let browser = prompt('Каким браузером вы пользуетесь?', '');
@@ -144,34 +151,16 @@ function getMin(a, b){
 
 console.log(getMin(3, 3))
 
-function pow(x, n) {
-    x = +prompt('Какой число нужно возвести в степень?', ''); //вопрос let
-    n = +prompt('В какую степень возвести?', '')
+function pow() {
+    let x = +prompt('Какой число нужно возвести в степень?', '');
+    let n = +prompt('В какую степень возвести?', '')
     console.log(Math.pow(x, n))
-    if(n<1){
+    if (n < 1) {
         alert('Степень не поддерживается')
     } else {
         return Math.pow(x, n)
-        }
+    }
 }
+
+console.log(pow(2, 2))
 */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
